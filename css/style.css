@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+    font-family: 'Arial', sans-serif;
+}
+
+nav {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    height: 60px;
+    background-color: black;
+    color: wheat;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+
+nav ul li {
+    padding: 0 12px;
+}
+
+.brand img {
+    width: 35px;
+    padding: 0 8px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.container {
+    min-height: 72vh;
+    background-image: url('../Assets/Images/bg.jpg');
+    background-color: rgb(139, 236, 228);
+    color: white;
+    display: flex;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    padding: 15px;
+    background-size: cover;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.songList {
+    width: 100%;
+}
+
+.songItemContainer {
+    margin: 5px;
+}
+
+.songItem {
+    height: 50px;
+    display: flex;
+    background-color: white;
+    color: black;
+    margin: 10px 0;
+    justify-content: space-between;
+    border-radius: 30px;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.songItem img {
+    width: 30px;
+    margin: 0 15px;
+    border-radius: 55px;
+}
+
+.timeStamp {
+    margin: 2px;
+    position: relative;
+    bottom: 5px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.songInfo {
+    position: absolute;
+    left: 10%;
+    color: white;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.songInfo img {
+    width: 50px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+#gif {
+    opacity: 0;
+    transition: opacity 0.7s ease-in;
+}
+
+.bottom {
+    position: sticky;
+    height: 120px;
+    background-color: rgb(105, 92, 92);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+}
+
+.icons img {
+    width: 25px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#myProgressBar {
+    text-align: center;
+    display: flex;
+    width: 80%;
+    position: relative;
+    cursor: pointer;
+    left: 10%;
+    margin: 10px 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    nav ul li {
+        padding: 8px 0;
+        text-align: center;
+    }
+
+    .container {
+        width: 95%;
+        padding: 10px;
+        margin: 15px auto;
+    }
+
+    /* Smaller SongItem */
+    .songItem {
+        flex-direction: row;
+        align-items: center;
+        height: 40px;
+        font-size: 0.8rem;
+        padding: 8px 12px;
+        margin: 8px 0;
+    }
+
+    .songItem img {
+        width: 25px;
+        margin: 0 10px;
+    }
+
+    .songInfo {
+        position: relative;
+        left: 0;
+        font-size: 14px;
+        margin-top: 4px;
+    }
+
+    #myProgressBar {
+        width: 100%;
+        left: 0;
+    }
+
+    .bottom {
+        padding: 12px;
+    }
+
+    .icons img {
+        width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand {
+        font-size: 1rem;
+    }
+
+    .container {
+        width: 95%;
+        padding: 8px;
+        margin: 10px auto;
+    }
+
+    /* Even smaller SongItem for very small devices */
+    .songItem {
+        flex-direction: row;
+        align-items: center;
+        height: 35px;
+        font-size: 0.7rem;
+        padding: 6px 10px;
+        margin: 6px 0;
+    }
+
+    .songItem img {
+        width: 20px;
+        margin: 0 8px;
+    }
+
+    .songInfo {
+        position: relative;
+        left: 0;
+        font-size: 12px;
+        margin-top: 3px;
+    }
+
+    #myProgressBar {
+        width: 100%;
+        left: 0;
+    }
+
+    .bottom {
+        padding: 10px;
+        height: auto;
+    }
+
+    .icons img {
+        width: 18px;
+    }
+}
