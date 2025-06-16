@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space & Line Remover</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #00ffc8;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 600px;
+      height: 150px;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      background: #1e1e1e;
+      color: #f0f0f0;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #00ffc8;
+      color: #121212;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #00bfa6;
+    }
+
+    #output {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 600px;
+      padding: 10px;
+      min-height: 100px;
+      background: #1e1e1e;
+      border-radius: 8px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Text Cleaner - Space & Line Remover</h1>
+  <textarea id="input" placeholder="Paste or type your text here..."></textarea>
+
+  <div class="btn-group">
+    <button onclick="removeSpaces()">Remove All Spaces & Lines</button>
+    <button onclick="copyOutput()">Copy Text</button>
+  </div>
+
+  <div id="output" placeholder="Cleaned text will appear here..."></div>
+
+  <script>
+    function removeSpaces() {
+      const input = document.getElementById("input").value;
+      // Remove all spaces, tabs, newlines, and sneaky zero-width spaces
+      const cleaned = input.replace(/[\s\u200B]+/g, '');
+      document.getElementById("output").textContent = cleaned;
+    }
+
+
+    function copyOutput() {
+      const outputText = document.getElementById("output").textContent;
+      if (!outputText) {
+        alert("Kuch text toh hona chahiye copy karne ke liye 😅");
+        return;
+      }
+
+      // Create temp textarea
+      const tempTextArea = document.createElement("textarea");
+      tempTextArea.value = outputText;
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempTextArea);
+
+      alert("Text copied to clipboard! 📋");
+    }
+  </script>
+</body>
+
+</html>

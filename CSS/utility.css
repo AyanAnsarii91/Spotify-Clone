@@ -1,0 +1,144 @@
+.flex {
+    display: flex;
+
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.item-center {
+    align-items: center;
+}
+
+.left {
+    width: 25vw;
+    padding: 10px;
+
+}
+
+.right {
+    width: 75vw;
+    position: relative;
+}
+
+.home ul li {
+    display: flex;
+    width: 30px;
+    list-style: none;
+    gap: 18px;
+    padding-top: 15px;
+    font-weight: bold;
+
+
+}
+
+.logo img {
+    width: 28px;
+}
+
+.bg-black {
+    background-color: black;
+    color: white;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+.bg-gray {
+    background-color: #121212;
+}
+
+.rounded {
+    border: 8px;
+}
+
+.m-1 {
+    margin: 10px;
+}
+
+
+
+.p-1 {
+    padding: 10px;
+}
+
+.heading {
+    display: flex;
+    /* width: ; */
+    gap: 18px;
+    width: 100%;
+    padding-top: 15px;
+    padding: 23px 14;
+    font-weight: bold;
+    align-items: center;
+    font-size: 13px;
+}
+
+.heading img {
+    width: 24px;
+}
+
+.library {
+    min-height: 67vh;
+    position: relative;
+}
+
+.footer {
+    position: absolute;
+    bottom: auto;
+    display: flex;
+
+    color: gray;
+    gap: 10px;
+    padding: 13px 0;
+}
+
+.right {
+    margin: 10px 0;
+}
+
+.footer a {
+    color: gray;
+    text-decoration: none;
+    /* font-size: 10px; */
+    font-size: 0.6875rem;
+}
+
+/* Apply styles to the scrollbar for modern browsers */
+::-webkit-scrollbar {
+    width: 12px;
+    /* Width of the vertical scrollbar */
+    height: 12px;
+    /* Height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #1c1c1c;
+    /* Dark background for the scrollbar track */
+    border-radius: 6px;
+    /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333333;
+    /* Darker gray for the scrollbar thumb */
+    border-radius: 6px;
+    /* Rounded corners */
+    border: 2px solid #1c1c1c;
+    /* Adds padding for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555555;
+    /* Slightly lighter gray on hover */
+}
+
+/* Add support for Firefox */
+html {
+    scrollbar-width: thin;
+    /* Makes the scrollbar thinner */
+    scrollbar-color: #333333 #1c1c1c;
+    /* Thumb and track colors */
+}
